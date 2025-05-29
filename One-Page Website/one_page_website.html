@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohamed Khalil Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    nav {
+      background-color: #6a0dad;
+      padding: 1em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 2em;
+      background-color: #f9f9f9;
+    }
+
+    section:nth-of-type(even) {
+      background-color: #f0e6f7;
+    }
+
+    h1, h2 {
+      color: #6a0dad;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      margin: 1em;
+      border: 3px solid #6a0dad;
+      cursor: pointer;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+    }
+
+    input, textarea {
+      margin-bottom: 1em;
+      padding: 0.5em;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background-color: #6a0dad;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 0.7em;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #5a009d;
+    }
+
+    footer {
+      background-color: #6a0dad;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border: 5px solid white;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#images">Pictures</a>
+    <a href="#videos">Videos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h1>Welcome to My Purple Themed WebSite</h1>
+    <p>This is a simple one-page layout that features a purple and white color theme, along with images, videos, and a contact form.</p>
+  </section>
+
+  <section id="images">
+    <h2>Gallery</h2>
+    <img src="https://cdn.pixabay.com/photo/2022/10/28/08/25/amethyst-7552587_1280.jpg" alt="Purple Amethyst Image" class="gallery-image" />
+    <img src="https://cdn.pixabay.com/photo/2022/10/28/08/25/amethyst-7552587_1280.jpg" alt="Purple Amethyst Image" class="gallery-image" />
+    <img src="https://cdn.pixabay.com/photo/2022/10/28/08/25/amethyst-7552587_1280.jpg" alt="Purple Amethyst Image" class="gallery-image" />
+  </section>
+
+  <section id="videos">
+    <h2>Featured Video</h2>
+    <iframe width="914" height="514" src="https://www.youtube.com/embed/UkHg42b22U4" title="How Miners Find, Cut, And Transport The Most Expensive Amethysts In The World | So Expensive" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <input type="submit" value="Send Message" />
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Purple Themed Website by Mohamed Khalil. All rights reserved.</p>
+  </footer>
+
+  <!-- Lightbox HTML -->
+  <div class="lightbox" id="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="" alt="Enlarged image" id="lightbox-img">
+  </div>
+
+  <!-- Lightbox Script -->
+  <script>
+    const images = document.querySelectorAll('.gallery-image');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target !== lightboxImg) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
