@@ -23,7 +23,7 @@ h1 {
     font-family: "Trebuchet MS", Optima;
     text-align: center;
     margin-top: 3%;
-    color: #2c2c2c;
+    color: #ccFcFc;
 }
 
 h1:hover {
@@ -44,7 +44,7 @@ p {
     font-size: 2.5vw;
     padding-left: 1vw;
     padding-right: 1vw;
-    color: #333;
+    color: #888;
 }
 
 p:hover {
@@ -62,7 +62,7 @@ p:hover {
 }
 
 a {
-    color: #2a60a3;
+    color: #8a6Fa3;
     cursor: pointer;
     text-decoration: underline;
 }
